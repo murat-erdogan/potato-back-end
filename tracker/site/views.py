@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
 from django.views.generic import TemplateView, CreateView, UpdateView, ListView
 
-from .forms import ProjectForm, TicketForm
+from .forms import ProjectForm, TicketForm, CreateTicketForm
 from .models import Project, Ticket
 
 
@@ -106,7 +106,7 @@ project_view = ProjectView.as_view()
 
 class CreateTicketView(ProjectContextMixin, CreateView):
     model = Ticket
-    form_class = TicketForm
+    form_class = CreateTicketForm
     template_name = "site/ticket_form.html"
 
     def get_success_url(self):
