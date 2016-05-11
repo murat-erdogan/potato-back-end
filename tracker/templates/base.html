@@ -17,6 +17,7 @@
 	<script src="{{ STATIC_URL }}js/modernizr.js"></script>
 	{% endif %}
 	<link rel="stylesheet" href="{{ STATIC_URL }}css/tracker.css">
+	<link rel="stylesheet" href="{{ STATIC_URL }}components/chosen/chosen.css">
 </head>
 <body>
 		<!--[if lt IE 8]>
@@ -94,5 +95,7 @@
 			{% else %}
 			<script src="{{ STATIC_URL }}js/app.built.js"></script>
 			{% endif %}
+			<script src="{{ STATIC_URL }}components/chosen/chosen.jquery.js"></script>
+			<script src="{{ STATIC_URL }}components/chosen/custom-select.js"></script>
 		</body>
 		</html>
