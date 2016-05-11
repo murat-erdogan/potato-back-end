@@ -48,6 +48,7 @@ class TicketForm(BaseTrackerForm):
         model = Ticket
         fields = ('title', 'description', 'assignees',)
 
+
     def __init__(self, project=None, *args, **kwargs):
         self.project = project
         super(TicketForm, self).__init__(*args, **kwargs)
@@ -55,7 +56,6 @@ class TicketForm(BaseTrackerForm):
 		
     def pre_save(self, instance):
         instance.created_by = self.user
-        instance.project = self.project
 		
 		
 class CreateTicketForm(TicketForm):
